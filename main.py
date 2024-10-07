@@ -3,7 +3,6 @@ from tp_utils import *
 from logic import *
 
 
-
 def main():
     try:
         path = sys.argv[1]
@@ -15,9 +14,10 @@ def main():
 
     arr = read_input(path)
 
-    sofia_sum, mateo_sum = coins_game(arr)
+    sofia_sum, mateo_sum, dp = coins_game(arr)
+    reconstruct_solution(arr, dp)
 
-    print("\n\nGanancia Sophia:  ",sofia_sum)
-    print("Ganancia Mateo:  ",mateo_sum)
+    print("\n\nGanancia Sophia:  ", sofia_sum)
+    print("Ganancia Mateo:  ", mateo_sum)
 
 main()
