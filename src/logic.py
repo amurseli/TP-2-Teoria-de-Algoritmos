@@ -1,15 +1,17 @@
 def coins_game(coins):
     n = len(coins)
+
+    if n == 0:
+        return 0,0,[]
+
+
     dp = [[0] * n for _ in range(n)]
     
-    #Caso base: una sola moneda
     for i in range(n):
-        dp[i][i] = coins[i]
-    
-    #Caso base: dos monedas
-    for i in range(n - 1):
-        dp[i][i+1] = max(coins[i], coins[i+1])
-    
+        dp[i][i] = coins[i]  #Caso base: una sola moneda
+        if i < n - 1:
+            dp[i][i + 1] = max(coins[i], coins[i + 1])  #Caso base: dos monedas
+
     for d in range(2, n):
         for i in range(n - d):
             j = i + d
