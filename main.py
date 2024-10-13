@@ -15,7 +15,7 @@ def main():
     arr = read_input(path)
 
     sofia_sum, mateo_sum, dp = coins_game(arr)
-    #reconstruct_solution(arr, dp)
+    reconstruct_solution(arr, dp)
 
     print("\n\nGanancia Sophia:  ", sofia_sum)
     print("Ganancia Mateo:  ", mateo_sum)
